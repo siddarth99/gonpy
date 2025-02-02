@@ -48,6 +48,7 @@ func NewFileReader(f string) (*NpyReader, error) {
 	if err != nil {
 		return nil, err
 	}
+	defer fid.Close()
 	r, err := NewReader(fid)
 	return r, err
 }
